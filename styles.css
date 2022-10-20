@@ -1,0 +1,39 @@
+body{
+    background-image: url("buzamezo.jpg");
+    color: black;
+    margin: auto;
+    margin-left: 0.7cm;
+}
+h1{
+    font-family: sans-serif;
+}
+
+h2{
+    font-family: sans-serif;
+    margin-bottom: 1cm;
+}
+
+p{
+    margin-top: 2.45cm;
+    font-size: 25px;
+    font-family: sans-serif;
+}
+
+a {
+    color:blue;
+    text-decoration: none;
+    font-style: italic;
+}
+
+a:hover {
+    color:blue;
+    text-decoration: none;
+    text-decoration: none;
+}
+
+#gomb {
+    font-size: 30px;
+    margin-top: 1cm;
+    display: block;
+    position: absolute;
+}
