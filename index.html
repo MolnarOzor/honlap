@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Személyiség☺</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<h1>Molnár Ozor 11.i  <img src="volleyball.jpg" style="float:right; width:8.5cm"></h1>
+<h2>Ságvári</h2>
+<p>
+    kedvenc tantárgy: fizika <img src="physics.jpg" style="float:right; width:8.5cm">
+</p>
+<p>
+    Github link: <a href="https://github.com/MolnarOzor" target="_blank">Github</a>
+</p>
+<button type="button" id="gomb">Gomb</button>
+
+<script>
+var b = document.querySelector("button");
+b.addEventListener("mouseover",change);
+function change()
+{
+    var i = Math.floor(Math.random()*675)+1;
+    var j = Math.floor(Math.random()*675)+1;
+    b.style.left = i+"px";
+    b.style.top = j+"px";
+}
+</script>
+</body>
+</html>
