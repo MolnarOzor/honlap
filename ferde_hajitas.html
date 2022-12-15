@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ferde Hajítás</title>
+    <style>
+        #palya{
+            background-color: beige;
+            border: 3px solid black;
+        }
+    </style>
+</head>
+<body>
+    <form name="urlap"><p> v0 = <input type="text" name="v0">m/s</p>
+    <p> a= <input type="text" name="a">°</p>
+    <input type="button" value="Számvizsgálat" onclick="vizsgal()"></form>
+    <canvas width="1000" height="600" id="palya"></canvas>
+    <script>
+        let palya = document.getElementById("palya")
+        let ctx = palya.getContext("2d")
+        function vizsgal(){
+            let v0 = Number(document.forms["urlap"]["v0"].value);
+            let a = Number(document.forms["urlap"]["a"].value) / 180 * Math.PI;
+            let v0x = v0 * Math.cos(a);
+            let v0y = v0 * Math.sin(a);
+            let g = 9.81;
+            let tr = 2*v0y/g;
+            let x = 0
+            let y = 0
+            let text = ""
+            ctx.clearRect(0,0, palya.width, palya.height)
+            for(let t = 0; t <= Math.floor(tr * 10, 0); t++)
+            {
+                x = Math.floor(v0x*(t/10),0)
+                y = 600-Math.floor(v0y*(t/10)-g/2*(t/10)**2,0)
+                text = text+ x+" "+y+"ˇ\n"
+                ctx.beginPath()
+                ctx.ellipse(x,y,5,5,0,0,Math.PI * 2)
+                ctx.fill()
+            }
+            console.log(text)
+            ctx.font = "bold 48px calibri"
+            ctx.fillText("ymax="+Math.floor(v0y*(tr/2)-g/2*(tr/2)**2,0)+"m", 50, 50)
+
+        }
+
+    </script>
+</body>
+</html>

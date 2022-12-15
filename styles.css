@@ -23,12 +23,14 @@ a {
     color:blue;
     text-decoration: none;
     font-style: italic;
+    font-size:25px;
 }
 
 a:hover {
     color:blue;
     text-decoration: none;
     text-decoration: none;
+    font-size:25px;
 }
 
 #gomb {
